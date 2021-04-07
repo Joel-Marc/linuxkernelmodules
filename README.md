@@ -10,7 +10,8 @@ in the /proc file system .Although you may use an editor to write C programs, yo
 
 As you’ll discover, the advantage of developing kernel modules is that it is a relatively easy method of interacting with the kernel, thus allowing you to write programs that directly invoke kernel functions. It is important for you to keep in mind that you are indeed writing kernel code that directly interacts with the kernel. That normally means that any errors in the code could crash the system! However, since you will be using a virtual machine, any failures will at worst only require rebooting the system.
 
-A full beginners guide to programming Linux Kernel Module can be read here : [The Linux Kernel Module Programming Guide](https://tldp.org/LDP/lkmpg/2.4/lkmpg.pdf)
+A full beginners guide to programming Linux Kernel Module can be read here : [The Linux Kernel Module Programming Guide](https://tldp.org/LDP/lkmpg/2.4/lkmpg.pdf) and [OS BOOK 10th ed](https://cloudflare-ipfs.com/ipfs/bafykbzaceauk2vnr3wg4srylh77es27jzpzfczhva3ruj6k2j2kndwfk6g7e4?filename=%2810%29%20Abraham%20Silberschatz%20-%20Operating%20System%20Concepts%20%5Bwith%20eText%20Access%20Code%5D-Wiley%20%282018%29.pdf)
+
 
 ## ASSN-1 - Loading and Removing Kernel Modules & Kernel Data Structures
 The first part of this project involves following a series of steps for creating and inserting a module into the Linux kernel.
@@ -100,7 +101,7 @@ cat /proc/cpuinfo
 echo "50"> /proc/sys/kernel/sched_rr_timeslice_ms
 ```
 
-For more reference : [PROC](https://devarea.com/linux-kernel-development-creating-a-proc-file-and-interfacing-with-user-space/)
+For more reference : [PROC](https://devarea.com/linux-kernel-development-creating-a-proc-file-and-interfacing-with-user-space/) and [OS BOOK 10th ed](https://cloudflare-ipfs.com/ipfs/bafykbzaceauk2vnr3wg4srylh77es27jzpzfczhva3ruj6k2j2kndwfk6g7e4?filename=%2810%29%20Abraham%20Silberschatz%20-%20Operating%20System%20Concepts%20%5Bwith%20eText%20Access%20Code%5D-Wiley%20%282018%29.pdf)
 
 
 This assignment will involve designing two kernel modules:
@@ -118,5 +119,4 @@ This will involve using the value of jiffies as well as the HZ rate. When a user
 cat /proc/seconds
 ```
 your kernel module will report the number of seconds that have elapsed since the kernel module was first loaded. Be sure to remove /proc/seconds when the module is removed.
-
 
