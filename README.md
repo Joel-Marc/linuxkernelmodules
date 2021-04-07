@@ -1,13 +1,18 @@
 # linuxkernelmodules
 
 ## Introduction
+What exactly is a kernel module? Modules are pieces of code that can be loaded and unloaded into the kernel upon demand. They extend the functionality of the kernel without the need to reboot the system. For example, one type of module is the device driver, which allows the kernel to access hardware connected to the system.
+Without modules, we would have to build monolithic kernels and add new functionality directly into the kernel image. 
+Besides having larger kernels, this has the disadvantage of requiring us to rebuild and reboot the kernel every time we want new functionality
 
 In this project, you will learn how to create a kernel modules and load it into the Linux kernel. You will then modify the kernel module so that it creates an entry
 in the /proc file system .Although you may use an editor to write C programs, you will have to use the terminal application to compile the programs, and you will have to enter commands on the command line to manage the modules in the kernel.
 
 As you’ll discover, the advantage of developing kernel modules is that it is a relatively easy method of interacting with the kernel, thus allowing you to write programs that directly invoke kernel functions. It is important for you to keep in mind that you are indeed writing kernel code that directly interacts with the kernel. That normally means that any errors in the code could crash the system! However, since you will be using a virtual machine, any failures will at worst only require rebooting the system.
 
-## ASSN-1
+A full beginners guide to programming Linux Kernel Module can be read here : [The Linux Kernel Module Programming Guide](https://tldp.org/LDP/lkmpg/2.4/lkmpg.pdf)
+
+## ASSN-1 - Loading and Removing Kernel Modules & Kernel Data Structures
 The first part of this project involves following a series of steps for creating and inserting a module into the Linux kernel.
 You can list all kernel modules that are currently loaded by entering the command
 
@@ -74,5 +79,44 @@ The jiffies variable is declared in the file <linux/jiffies.h>.
 
 1. Print out the values of jiffies and HZ in the simple init() function.
 2. Print out the value of jiffies in the simple exit() function.
+
+### Kernel Data Structures
+The second part of this project involves modifying the kernel module so that it uses the kernel linked-list data structure.
+
+In the module entry point, create a linked list containing five struct birthday elements. Traverse the linked list and output its contents to the kernel log buffer.
+Invoke the dmesg command to ensure the list is properly constructed once the kernel module has been loaded.
+In the module exit point, delete the elements from the linked list and return the free memory back to the kernel. 
+Again, invoke the dmesg command to check that the list has been removed once the kernel module has been unloaded.
+
+
+
+## ASSN-2 - The /proc File System
+
+Proc is a pseudo file system for interfacing with the kernel internal data structures. As a user, you can use proc files for system diagnostics  – CPU, memory, Interrupts and many more. You can also configure a lot of parameters like scheduler parameters, kernel objects, memory and more
+
+The common interaction with proc is using cat and echo from the shell. For example:
+```
+cat /proc/cpuinfo
+echo "50"> /proc/sys/kernel/sched_rr_timeslice_ms
+```
+
+For more reference : [PROC](https://devarea.com/linux-kernel-development-creating-a-proc-file-and-interfacing-with-user-space/)
+
+
+This assignment will involve designing two kernel modules:
+
+1. Design a kernel module that creates a /proc file named /proc/jiffies that reports the current value of jiffies when the /proc/jiffies file
+is read, such as with the command
+
+```cat /proc/jiffies```
+
+Be sure to remove /proc/jiffies when the module is removed.
+
+2. Design a kernel module that creates a proc file named /proc/seconds that reports the number of elapsed seconds since the kernel module was loaded. 
+This will involve using the value of jiffies as well as the HZ rate. When a user enters the command
+```
+cat /proc/seconds
+```
+your kernel module will report the number of seconds that have elapsed since the kernel module was first loaded. Be sure to remove /proc/seconds when the module is removed.
 
 
