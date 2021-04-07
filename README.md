@@ -16,8 +16,9 @@ A full beginners guide to programming Linux Kernel Module can be read here : [Th
 ## ASSN-1 - Loading and Removing Kernel Modules & Kernel Data Structures
 The first part of this project involves following a series of steps for creating and inserting a module into the Linux kernel.
 You can list all kernel modules that are currently loaded by entering the command
-
-```lsmod```
+```
+lsmod
+```
 
 This command will list the current kernel modules in three columns: name, size, and where the module is being used.
 The function simple init() is the module entry point, which represents the function that is invoked when the module is loaded into the kernel.
