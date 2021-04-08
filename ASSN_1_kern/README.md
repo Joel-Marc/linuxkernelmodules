@@ -6,7 +6,23 @@ A full beginners guide to programming Linux Kernel Module can be read here : [Th
 ```
 make
 ```
+2. Load the module using **insmod** command . Eg: if you *make* the bday.c module multiple files are created in which bday.ko is present.
+```
+sudo insmod bday.ko
+```
+3. View the output after loading in using **dmesg** command
+```
+dmesg
+```
+4. Remove the module after use , using **rmmod** command .
+```
+sudo rmmod bday
+```
 
+5. View the output after removing in using **dmesg** command
+```
+dmesg
+```
  
 
 ## ASSN-1 - Loading and Removing Kernel Modules & Kernel Data Structures
