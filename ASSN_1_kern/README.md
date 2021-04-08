@@ -1,6 +1,13 @@
-## REFERANCE
+## REFERENCE
 A full beginners guide to programming Linux Kernel Module can be read here : [The Linux Kernel Module Programming Guide](https://tldp.org/LDP/lkmpg/2.4/lkmpg.pdf) and [OS BOOK 10th ed](https://cloudflare-ipfs.com/ipfs/bafykbzaceauk2vnr3wg4srylh77es27jzpzfczhva3ruj6k2j2kndwfk6g7e4?filename=%2810%29%20Abraham%20Silberschatz%20-%20Operating%20System%20Concepts%20%5Bwith%20eText%20Access%20Code%5D-Wiley%20%282018%29.pdf)
 
+## TO RUN :
+1. Make/Compile the file using **make** command.
+```
+make
+```
+
+ 
 
 ## ASSN-1 - Loading and Removing Kernel Modules & Kernel Data Structures
 The first part of this project involves following a series of steps for creating and inserting a module into the Linux kernel.
