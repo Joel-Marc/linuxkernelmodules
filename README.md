@@ -51,7 +51,9 @@ of the module, and author.
 To compile the module, enter the following
 on the command line:
 
-```make```
+```
+make
+```
 
 The compilation produces several files. The file simple.ko represents the compiled kernel module. The following step illustrates inserting this module
 into the Linux kernel.
@@ -59,12 +61,16 @@ into the Linux kernel.
 ### Loading and Removing Kernel Modules
 Kernel modules are loaded using the insmod command, which is run as follows:
 
-```sudo insmod 1.ko```
+```
+sudo insmod 1.ko
+```
 
 To check whether the module has loaded, enter the **lsmod** command and search for the module simple. Recall that the module entry point is invoked when the
 module is inserted into the kernel. To check the contents of this message in the kernel log buffer, enter the command
 
-```dmesg```
+```
+dmesg
+```
 
 You should see the message "Loading Module."
 
@@ -118,7 +124,9 @@ This assignment will involve designing two kernel modules:
 1. Design a kernel module that creates a /proc file named /proc/jiffies that reports the current value of jiffies when the /proc/jiffies file
 is read, such as with the command
 
-```cat /proc/jiffies```
+```
+cat /proc/jiffies
+```
 
 Be sure to remove /proc/jiffies when the module is removed.
 
@@ -128,4 +136,3 @@ This will involve using the value of jiffies as well as the HZ rate. When a user
 cat /proc/seconds
 ```
 your kernel module will report the number of seconds that have elapsed since the kernel module was first loaded. Be sure to remove /proc/seconds when the module is removed.
-
