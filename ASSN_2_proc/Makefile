@@ -1,4 +1,5 @@
 obj-m += seconds.o
+
 obj-m += jiffies.o
 
 all:
