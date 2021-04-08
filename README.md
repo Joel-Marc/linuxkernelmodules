@@ -78,6 +78,7 @@ Removing the kernel module involves invoking the rmmod command :
 ```
 sudo rmmod 1.ko
 ```
+
 Be sure to check with the dmesg command to ensure the module has been removed. Because the kernel log buffer can fill up quickly, it often makes sense to clear the buffer periodically. This can be accomplished as follows:
 ```
 sudo dmesg -c
@@ -98,6 +99,7 @@ The jiffies variable is declared in the file <linux/jiffies.h>.
 2. Print out the value of jiffies in the simple exit() function.
 
 ### Kernel Data Structures
+
 The second part of this project involves modifying the kernel module so that it uses the kernel linked-list data structure.
 
 In the module entry point, create a linked list containing five struct birthday elements. Traverse the linked list and output its contents to the kernel log buffer.
