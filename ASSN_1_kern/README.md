@@ -1,4 +1,4 @@
-## REFER!!!
+## REFERANCE
 A full beginners guide to programming Linux Kernel Module can be read here : [The Linux Kernel Module Programming Guide](https://tldp.org/LDP/lkmpg/2.4/lkmpg.pdf) and [OS BOOK 10th ed](https://cloudflare-ipfs.com/ipfs/bafykbzaceauk2vnr3wg4srylh77es27jzpzfczhva3ruj6k2j2kndwfk6g7e4?filename=%2810%29%20Abraham%20Silberschatz%20-%20Operating%20System%20Concepts%20%5Bwith%20eText%20Access%20Code%5D-Wiley%20%282018%29.pdf)
 
 
@@ -32,7 +32,9 @@ of the module, and author.
 To compile the module, enter the following
 on the command line:
 
-```make```
+```
+make
+```
 
 The compilation produces several files. The file simple.ko represents the compiled kernel module. The following step illustrates inserting this module
 into the Linux kernel.
@@ -40,12 +42,16 @@ into the Linux kernel.
 ### Loading and Removing Kernel Modules
 Kernel modules are loaded using the insmod command, which is run as follows:
 
-```sudo insmod 1.ko```
+```
+sudo insmod 1.ko
+```
 
 To check whether the module has loaded, enter the **lsmod** command and search for the module simple. Recall that the module entry point is invoked when the
 module is inserted into the kernel. To check the contents of this message in the kernel log buffer, enter the command
 
-```dmesg```
+```
+dmesg
+```
 
 You should see the message "Loading Module."
 
