@@ -82,6 +82,7 @@ Be sure to check with the dmesg command to ensure the module has been removed. B
 ```
 sudo dmesg -c
 ```
+
 Once you are able to correctly load and unload your module, complete the following additional steps:
 
 1. Print out the value of GOLDEN RATIO PRIME in the simple init() function.
