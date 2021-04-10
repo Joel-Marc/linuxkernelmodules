@@ -19,7 +19,7 @@ static struct file_operations proc_ops ={
 /* This function is called when the module is loaded. */
 int proc_init(void){
 
-/* creates the /proc/hello entry */
+/* creates the /proc/jiffies entry */
   proc_create(PROC_NAME, 0666, NULL, &proc_ops);
   return 0;
 }
@@ -27,11 +27,11 @@ int proc_init(void){
 /* This function is called when the module is removed. */
 void proc_exit(void){
 
-/* removes the /proc/hello entry */
+/* removes the /proc/jiffies entry */
   remove_proc_entry(PROC_NAME, NULL);
 }
 
-/* This function is called each time /proc/hello is read */
+/* This function is called each time /proc/jiffies is read */
 ssize_t proc_read(struct file *file, char  __user *usr_buf,size_t count, loff_t *pos)
 {
   int rv = 0;
@@ -53,5 +53,5 @@ ssize_t proc_read(struct file *file, char  __user *usr_buf,size_t count, loff_t 
 module_init(proc_init);
 module_exit(proc_exit);
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Hello Module");
+MODULE_DESCRIPTION("JIFFIES MODULE");
 MODULE_AUTHOR("SGG");
